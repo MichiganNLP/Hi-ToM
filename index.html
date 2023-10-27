@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>
+      Hi-ToM: A Benchmark for Evaluating Higher-Order Theory of Mind Reasoning
+      in Large Language Models
+    </title>
+    <meta
+      name="description"
+      content="Many NLP benchmarks exhibit inherent disagreements. Rather than aggregating labels, we train models directly on datasets with these disagreements. We introduce embedding-based techniques to enhance model performance on such data."
+    />
+    <meta
+      name="keywords"
+      content="Machine Learning, dataset, classification, NLI, natural language inference, humor, sentiment analysis, emotion classification, hate speech detection, Natural Language Processing, annotation disagreement, research, EMNLP 2023 Findings, EMNLP, Deep Learning, NLP, PyTorch"
+    />
+    <meta
+      name="author"
+      content="Naihao Deng, Siyang Liu, Xinliang Frederick Zhang, Winston Wu, Lu Wang, Rada Mihalcea"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="Hi-ToM: A Benchmark for Evaluating Higher-Order Theory of Mind Reasoning in Large Language Models"
+    />
+    <meta
+      property="og:image"
+      content="https://lit.eecs.umich.edu/annotation-embeddings-website/img/example.png"
+    />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content="1200" />
+    <meta
+      property="og:title"
+      content="Hi-ToM: A Benchmark for Evaluating Higher-Order Theory of Mind Reasoning in Large Language Models"
+    />
+    <meta
+      property="og:description"
+      content="Many NLP benchmarks exhibit inherent disagreements. Rather than aggregating labels, we train models directly on datasets with these disagreements. We introduce embedding-based techniques to enhance model performance on such data."
+    />
+    <meta
+      property="og:url"
+      content="https://lit.eecs.umich.edu/annotation-embeddings-website/"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@michigan_AI" />
+    <meta name="twitter:creator" content="@michigan_AI" />
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-42MFV87X10"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-42MFV87X10");
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <a href="https://lit.eecs.umich.edu/"
+          ><img id="arc" src="img/lit-logo.png" alt="LIT lab logo"
+        /></a>
+
+        <a href="https://umich.edu/"
+          ><img id="um" src="img/um.png" alt="University of Michigan logo"
+        /></a>
+
+        <h1>
+          Hi-ToM: A Benchmark for Evaluating Higher-Order Theory of Mind <br />
+          Reasoning in Large Language Models
+        </h1>
+
+        <ul id="quick-links">
+          <li><a href="https://arxiv.org/abs/2310.16755">Paper</a></li>
+
+          <li>
+            <a href="https://github.com/ying-hui-he/Hi-ToM_dataset">Code</a>
+          </li>
+
+          <li>
+            <a href="https://huggingface.co/umwyf/Hi-ToM_Dataset"
+              >Hi-ToM dataset</a
+            >
+          </li>
+
+          <li>
+            <a href="BibTeX.html">BibTeX Citation</a>
+          </li>
+        </ul>
+      </header>
+
+      <section class="section-alt">
+        <div class="content">
+          <h2>Abstract</h2>
+
+          <p id="abstract">
+            Theory of Mind (ToM) is the ability to reason about one's own and
+            others' mental states. ToM plays a critical role in the development
+            of intelligence, language understanding, and cognitive processes.
+            While previous work has primarily focused on first and second-order
+            ToM, we explore higher-order ToM, which involves recursive reasoning
+            on others' beliefs.<br /><br />
+            We introduce <strong>Hi-ToM</strong>, a <strong>Hi</strong>gher
+            <strong>O</strong>rder <strong>T</strong>heory <strong>o</strong>f
+            <strong>M</strong>ind benchmark. Our experimental evaluation using
+            various Large Language Models (LLMs) indicates a decline in
+            performance on higher-order ToM tasks, demonstrating the limitations
+            of current LLMs. We conduct a thorough analysis of different failure
+            cases of LLMs, and share our thoughts on the implications of our
+            findings on the future of NLP.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <a href="https://arxiv.org/pdf/2310.16755.pdf">
+            <ol id="thumbnails">
+              <li>
+                <img
+                  src="img/thumbs/1.png"
+                  alt="thumbnail, page 1"
+                  style="width: 75px; height: 100px"
+                />
+              </li>
+              <li>
+                <img
+                  src="img/thumbs/2.png"
+                  alt="thumbnail, page 2"
+                  style="width: 75px; height: 100px"
+                />
+              </li>
+              <li>
+                <img
+                  src="img/thumbs/3.png"
+                  alt="thumbnail, page 3"
+                  style="width: 75px; height: 100px"
+                />
+              </li>
+              <li>
+                <img
+                  src="img/thumbs/4.png"
+                  alt="thumbnail, page 4"
+                  style="width: 75px; height: 100px"
+                />
+              </li>
+              <li>
+                <img
+                  src="img/thumbs/5.png"
+                  alt="thumbnail, page 5"
+                  style="width: 75px; height: 100px"
+                />
+              </li>
+              <li>
+                <img
+                  src="img/thumbs/6.png"
+                  alt="thumbnail, page 6"
+                  style="width: 75px; height: 100px"
+                />
+              </li>
+              <li>
+                <img
+                  src="img/thumbs/7.png"
+                  alt="thumbnail, page 7"
+                  style="width: 75px; height: 100px"
+                />
+              </li>
+              <li>
+                <img
+                  src="img/thumbs/8.png"
+                  alt="thumbnail, page 8"
+                  style="width: 75px; height: 100px"
+                />
+              </li>
+              <li>
+                <img
+                  src="img/thumbs/9.png"
+                  alt="thumbnail, page 9"
+                  style="width: 75px; height: 100px"
+                />
+              </li>
+            </ol>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <ol id="authors">
+            <li>
+              <a href="https://ying-hui-he.github.io/">
+                <div class="author-img-container">
+                  <img
+                    src="img/authors/yinghui_he.jpg"
+                    alt="Yinghui He profile picture"
+                  />
+                </div>
+                Yinghui He
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/yufan-wu-a27b6b24b/">
+                <div class="author-img-container">
+                  <img
+                    src="img/authors/yufan_wu.jpg"
+                    alt="Yufan Wu profile picture"
+                  />
+                </div>
+                Yufan Wu
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/yilin-jia-1277a1250/">
+                <div class="author-img-container">
+                  <img
+                    src="img/authors/yilin_jia.jpg"
+                    alt="Yilin Jia profile picture"
+                  />
+                </div>
+                Yilin Jia
+              </a>
+            </li>
+            <li>
+              <a href="https://web.eecs.umich.edu/~mihalcea/">
+                <div class="author-img-container">
+                  <img
+                    src="img/authors/rada_mihalcea.png"
+                    alt="Rada Mihalcea profile picture"
+                  />
+                </div>
+                Rada Mihalcea
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/yulong-chen-95a52614b/?originalSubdomain=uk"
+              >
+                <div class="author-img-container">
+                  <img
+                    src="img/authors/yulong_chen.jpg"
+                    alt="Yulong Chen profile picture"
+                  />
+                </div>
+                Yulong Chen
+              </a>
+            </li>
+            <li>
+              <a href="https://dnaihao.github.io/">
+                <div class="author-img-container">
+                  <img
+                    src="img/authors/naihao_deng.jpg"
+                    alt="Naihao Deng profile picture"
+                  />
+                </div>
+                Naihao Deng
+              </a>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h2>Downloads</h2>
+
+          <ul id="downloads">
+            <li>
+              <a href="https://arxiv.org/pdf/2310.16755.pdf" download
+                ><b>PDF Paper</b></a
+              >
+            </li>
+            <br />
+            <li>
+              <a href="https://github.com/ying-hui-he/Hi-ToM_dataset"
+                ><b>Code</b></a
+              >
+            </li>
+            <br />
+            <a href="https://huggingface.co/umwyf/Hi-ToM_Dataset"
+              ><b>TID-8 dataset</b></a
+            >
+          </ul>
+        </div>
+      </section>
+
+      <section class="section-alt">
+        <p id="affiliation">
+          <a href="https://umich.edu/">
+            <img
+              id="um-vertical"
+              alt="University of Michigan"
+              src="img/um-vertical.png"
+            />
+          </a>
+        </p>
+      </section>
+
+      <footer>
+        <div class="content" class="section-alt">
+          <h2>Acknowledgments</h2>
+          <p id="acknowledgments-text">
+            We thank the anonymous reviewers for their valuable feedback and
+            discussion. This paper's draft version was accepted to the
+            non-archival track of the ToM workshop at ICML 2023. We would also
+            like to extend our appreciation to the reviewers from the ToM
+            workshop for their feedback.
+          </p>
+
+          <p>
+            Web page inspired by the
+            <a href="https://lit.eecs.umich.edu/lifeqa/">LifeQA web page</a>.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  function playEvidence($id, $start, $end) {
+    const $video = document.getElementById("example-video");
+    $video.pause();
+    document.getElementById($id).style.color = "rgb(117, 116, 116)";
+
+    function checkTime() {
+      if ($video.currentTime >= $end) {
+        $video.pause();
+      } else {
+        /* call checkTime every 1/10th second until endTime */
+        setTimeout(checkTime, 100);
+      }
+    }
+
+    $video.focus();
+    $video.currentTime = $start;
+    setTimeout(function () {
+      // to prevent `The play() request was interrupted by a call to pause().`
+      $video.play();
+    }, 150);
+    checkTime();
+  }
+</script>
