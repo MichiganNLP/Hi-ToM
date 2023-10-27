@@ -1,9 +1,8 @@
 # Hi-ToM
 
-Code for the [Hi-ToM website](https://lit.eecs.umich.edu/).
+Code for the [Hi-ToM website](https://lit.eecs.umich.edu/hi-tom/).
 
-<!--
-## Paper page thumbnails.
+<!-- ## Paper page thumbnails.
 
 We used ImageMagick:
 
