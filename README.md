@@ -1,6 +1,6 @@
 # Hi-ToM
 
-Code for the [Hi-ToM website](https://lit.eecs.umich.edu/hi-tom/).
+Code for the [Hi-ToM website](http://lit.eecs.umich.edu/Hi-ToM/).
 
 <!-- ## Paper page thumbnails.
 
